@@ -1,0 +1,41 @@
+[
+	{
+		"id": 1,
+		"name": "Green Casual Collar-Neck Dress",
+		"images": [{
+			"thumb": "/images/fash-1-thumb.png",
+			"big": "/images/fash-1-big.png"
+		},{
+			"thumb": "/images/fash-2-thumb.png",
+			"big": "/images/fash-2-big.png"
+		},{
+			"thumb": "/images/fash-3-thumb.png",
+			"big": "/images/fash-3-big.png"
+		},{
+			"thumb": "/images/fash-4-thumb.png",
+			"big": "/images/fash-4-big.png"
+		}],
+		"price": {
+			"currency": "$",
+			"amount": 99
+		},
+		"description": "Green solid shirt dress, Shirt collar, Three-quarter, roll-up sleeves, Knee length in straight hem",
+		"sizes": ["S","M","L"],
+		"collection": "summer2022",
+		"recommendations": [{
+			"price": {
+				"currency":"$",
+				"amount": 45
+			},
+			"name": "Half Dome Poolover",
+			"image": "/images/half-dome-poolover.png"
+		},{
+			"price": {
+				"currency":"$",
+				"amount": 35
+			},
+			"name": "Pink Long Heels",
+			"image": "/images/heels.png"
+		}]
+	}
+]
