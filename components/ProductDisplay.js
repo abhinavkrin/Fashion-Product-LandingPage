@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import {useState, useCallback, useContext} from 'react';
+import {useState, useCallback, useContext, useRef} from 'react';
 import Image from "next/image";
 import ProductBigImage from "./ProductBigImage";
 import ProductInfo from './ProductInfo';
@@ -13,6 +13,7 @@ import CollectionCard from './CollectionCard';
 import { FiArrowRightCircle, FiChevronRight } from 'react-icons/fi';
 
 export default function ProductDisplay({product}){
+	const imageRef = useRef();
 	const [currentImage,setCurrentImage] = useState(() => product.images[0]);
 	const [isDetailedView, setDetailedView] = useState(false);
 	const collections = useContext(CollectionsContext);
@@ -27,13 +28,13 @@ export default function ProductDisplay({product}){
 				<div className="w-5/12 flex-1 pt-2 pb-10">
 					<ProductInfo isDetailedView={isDetailedView} product={product} /> 
 					<ProductSize product={product}/>
-					<ProductThumbnails product={product} onThumbnailClick={setCurrentImage} />
+					<ProductThumbnails product={product} onThumbnailClick={setCurrentImage} imageRef={imageRef}/>
 				</div>
 				<div className="w-2/12 p-5 flex justify-center items-center">
 					<AddToCartButton/>
 				</div>
 				<div className="w-5/12 flex flex-1">
-					<ProductBigImage src={currentImage.big} alt={product.name}/>
+					<ProductBigImage src={currentImage.big} alt={product.name} imageRef={imageRef}/>
 				</div>
 			</div>
 		)

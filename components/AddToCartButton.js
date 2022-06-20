@@ -1,5 +1,5 @@
 export default function AddToCartButton({className,...props}){
 	return (
-		<button className={(className || '') + 'text-white rounded-full h-28 w-28 bg-red-500 z-50'} {...props}>ADD</button>
+		<button className={(className || '') + 'text-white rounded-full h-28 w-28 bg-red-500 z-5 hover:bg-red-600 active:bg-red-700 focus:outline-none focus:ring focus:ring-red-300 z-50'} {...props}>ADD</button>
 	)
 }
