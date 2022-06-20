@@ -24,8 +24,8 @@ export default function ProductDisplay({product}){
 
 	if(isDetailedView){		
 		return (
-			<div className="w-full h-full flex flex-row p-14">
-				<div className="w-5/12 flex-1 pt-2 pb-10">
+			<div className="w-full h-full flex flex-row p-14 2xl:p-32 items-center">
+				<div className="w-5/12 flex-1 pb-10">
 					<ProductInfo isDetailedView={isDetailedView} product={product} /> 
 					<ProductSize product={product}/>
 					<ProductThumbnails product={product} onThumbnailClick={setCurrentImage} imageRef={imageRef}/>
@@ -50,13 +50,13 @@ export default function ProductDisplay({product}){
 				</div>
 				<div className="w-5/12 p-5 flex flex-col justify-center items-center z-10 space-y-5 ">
 					{product.recommendations.map(r=> (
-						<div key={r.name} className="flex flex-row w-56 h-36 bg-white rounded-lg drop-shadow-2xl overflow-hidden">
-							<div className='flex flex-col flex-auto h-full justify-between p-5'>
-								<div className='text-gray-500'>{r.name}</div>
-								<div>{r.price.currency+' '+r.price.amount}</div>
+						<div key={r.name} className="flex flex-row w-56 2xl:w-80 h-36 2xl:h-52 bg-white rounded-lg drop-shadow-2xl overflow-hidden">
+							<div className='flex flex-col flex-auto h-full justify-between p-5 2xl:p-7'>
+								<div className='text-gray-500 2xl:text-xl'>{r.name}</div>
+								<div className='2xl:text-xl'>{r.price.currency+' '+r.price.amount}</div>
 							</div>
-							<div className='flex flex-col translate-y-12 translate-x-4'>
-								<Image src={r.image} alt={r.name} height="150" width="150"/>
+							<div className='flex flex-col translate-y-14 translate-x-4'>
+								<img src={r.image} alt={r.name} className="w-40 h-40 2xl:w-44 2xl:h-42"/>
 							</div>
 						</div>
 					))}

@@ -3,14 +3,14 @@
 		"id": 1,
 		"name": "Green Casual Collar-Neck Dress",
 		"images": [{
+			"thumb": "/images/fash-3-thumb.png",
+			"big": "/images/fash-3-big.png"
+		},{
 			"thumb": "/images/fash-1-thumb.png",
 			"big": "/images/fash-1-big.png"
 		},{
 			"thumb": "/images/fash-2-thumb.png",
 			"big": "/images/fash-2-big.png"
-		},{
-			"thumb": "/images/fash-3-thumb.png",
-			"big": "/images/fash-3-big.png"
 		},{
 			"thumb": "/images/fash-4-thumb.png",
 			"big": "/images/fash-4-big.png"
