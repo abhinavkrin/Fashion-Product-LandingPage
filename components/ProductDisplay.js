@@ -55,6 +55,16 @@ export default function ProductDisplay({product}){
 				scale: 0.1
 			})
 		}
+		if(collectionContainerRef){
+			gsap.fromTo(collectionContainerRef.current,{
+				x: 0,
+				opacity: 1,
+				delay: 0.5,
+			},{
+				x: 100,
+				opacity: 0.01
+			})
+		}
 		if(imageRef){
 			gsap.fromTo(imageRef.current,{
 				x: 0,
