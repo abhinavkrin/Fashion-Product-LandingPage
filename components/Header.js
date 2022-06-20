@@ -1,7 +1,10 @@
-import {FiHeart, FiMenu, FiShoppingBag, FiUser} from 'react-icons/fi';
+/* eslint-disable @next/next/no-img-element */
+import {FiChevronRight, FiHeart, FiMenu, FiShoppingBag, FiUser} from 'react-icons/fi';
+import { useData } from './DataProvider';
 
 import Logo from './Logo';
-export default function Header(){
+export default function Header({isOpen = true, collectionBoxRef}){
+	const {activeCollection: collection} = useData();
 	return (
 		<div className='flex flex-row items-center w-full'>
 			<div className='h-20 2xl:h-24 p-6 2xl:p-8 flex flex-row items-center border-r border-b'>

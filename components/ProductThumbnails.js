@@ -4,7 +4,7 @@ import { useCallback } from "react";
 export default function ProductThumbnails({product,onThumbnailClick, imageRef}){
 	const onImageClick = useCallback((image) => {
 		console.log(imageRef.current)
-		if(image.big === imageRef.current?.getAttribute('data-bigUrl'))
+		if(image.big === imageRef.current?.getAttribute('data-bigurl'))
 			return;
 		if(imageRef){
 			gsap.fromTo(imageRef.current,{
