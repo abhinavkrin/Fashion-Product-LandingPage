@@ -6,7 +6,7 @@ export default function Home() {
   const {products} = useData();
   const [isOpen, setIsOpen] = useState(true);
   return (
-    <div className='flex flex-col h-screen bg-zinc-50'>
+    <div className='flex flex-col h-full bg-zinc-50'>
       <div className='flex-initial'>
         <Header isOpen={isOpen}/>
       </div>

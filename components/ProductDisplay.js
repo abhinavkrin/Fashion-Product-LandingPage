@@ -15,53 +15,48 @@ export default function ProductDisplay({product}){
 	const [currentImage,setCurrentImage] = useState(() => product.images[0]);
 	const [isDetailedView, setDetailedView] = useState(false);
 	
-	const collection = useData().getCollection(product.collection);
-
 	const imageRef = useRef();
 	const productNameRef = useRef();
-	const addButtonRef = useRef();
 	const openDetailButtonRef = useRef();
-	const productDetailContainerRef = useRef();
 	const collectionContainerRef = useRef();
+	const collection = useData().getCollection(product.collection);
 	const onDetailView = useCallback(() => {
 		// exit animations
 		gsap.fromTo('.recommendation-box', {
 			y: 0,
 			opacity: 1,
-			delay: 0.5,
-			stagger: 0.2
 		},{
 			y: 100,
+			delay: 0.5,
 			opacity: 0.01
 		});
 		if(productNameRef.current){
 			gsap.fromTo(productNameRef.current,{
 				y: 0,
 				opacity: 1,
-				delay: 0.5,
-				stagger: 0.2
 			},{
 				y: 100,
-				opacity: 0.01
+				opacity: 0.01,
+				delay: 0.5,
 			})
 		}
 		if(openDetailButtonRef){
 			gsap.fromTo(openDetailButtonRef.current,{
 				scale: 1,
 				opacity: 1,
-				delay: 0.5,
 			},{
 				opacity: 0.01,
-				scale: 0.1
+				scale: 0.1,
+				delay: 0.5,
 			})
 		}
 		if(collectionContainerRef){
 			gsap.fromTo(collectionContainerRef.current,{
 				x: 0,
 				opacity: 1,
-				delay: 0.5,
 			},{
 				x: 100,
+				delay: 0.5,
 				opacity: 0.01
 			})
 		}
@@ -69,10 +64,10 @@ export default function ProductDisplay({product}){
 			gsap.fromTo(imageRef.current,{
 				x: 0,
 				opacity: 1,
-				delay: 0.5,
 			},{
 				opacity: 0.01,
-				x: -100,
+				x: 100,
+				delay: 0.5,
 				onComplete: () => setDetailedView(true)
 			})
 		}
@@ -134,23 +129,24 @@ export default function ProductDisplay({product}){
 
 	if(isDetailedView){		
 		return (
-			<div className="w-full h-full flex flex-row p-14 2xl:p-32 items-center overflow-x-hidden" ref={productDetailContainerRef}>
+			<div className="w-full h-full flex flex-row p-14 pt-10 2xl:p-32 items-center overflow-x-hidden">
 				<div className="w-5/12 flex-1 pb-10">
-					<ProductInfo isDetailedView={isDetailedView} product={product}/> 
+					<ProductInfo isDetailedView={isDetailedView} product={product} /> 
 					<ProductSize product={product}/>
 					<ProductThumbnails product={product} onThumbnailClick={setCurrentImage} imageRef={imageRef}/>
 				</div>
-				<div className="w-2/12 p-5 flex justify-center items-center">
-					<AddToCartButton/>
+				<div className='w-0'></div>
+				<div className="w-2/12 p-5 flex justify-center items-center" ref={null}>
+					<AddToCartButton />
 				</div>
 				<div className="w-5/12 flex flex-1">
-					<ProductBigImage src={currentImage.big} alt={product.name} imageRef={imageRef} isDetailedView={isDetailedView}/>
+					<ProductBigImage src={currentImage.big} alt={product.name} imageRef={imageRef} isDetailedView={isDetailedView} />
 				</div>
 			</div>
 		)
 	}
 	return (
-		<div className="w-full h-full flex flex-row pl-14 overflow-x-hidden" ref={productDetailContainerRef}>
+		<div className="w-full h-full flex flex-row pl-14 overflow-x-hidden">
 			<div className='w-9/12 flex flex-row relative'>
 				<div className="w-5/12 flex-1 pt-12 pb-10 pl-10 pr-10 text-right z-10">
 					<ProductInfo 

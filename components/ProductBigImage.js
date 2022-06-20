@@ -13,7 +13,8 @@ export default function ProductBigImage({src,alt,isDetailedView, imageRef}){
 			},{
 				x:0,
 				opacity: 1,
-				duration: 0.2
+				duration: 0.2,
+				delay: 0.2
 			})
 		}
 	},[src,imageRef, isDetailedView])

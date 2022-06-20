@@ -1,8 +1,20 @@
-import {useState} from 'react';
+import gsap from 'gsap';
+import {useState, useEffect} from 'react';
 export default function ProductSize({product}){
 	const [currentSize,setCurrentSize] = useState(product.sizes[0])
+	useEffect(() => {
+		gsap.fromTo('.animate-item-size',{
+			y: 50,
+			opacity: 0.01
+		},{
+			y: 0,
+			opacity: 1,
+			delay: 0.2,
+			stagger: 0.2,
+		})
+	},[])
 	return (
-		<div>
+		<div className='animate-item-size'>
 			<div className="mb-2 2xl:mb-4">SELECT SIZE</div>
 			<div className="flex flex-row space-x-2 2xl:space-6 mb-5 2xl:text-xl">
 				{product.sizes.map(size => (
