@@ -24,7 +24,7 @@ export default function ProductBigImage({src,alt,isDetailedView, imageRef}){
 					<circle cx="149.5" cy="147.5" r="128.5" fill="#D7F2DF"/>
 				</svg>
 			</div>
-			<img ref={imageRef} src={src} alt={alt} className="relative w-64 2xl:w-96 pt-30 2xl:pt-32 h-auto m-auto z-10 "/>
+			<img ref={imageRef} data-bigUrl={src} src={src} alt={alt} className="relative w-64 2xl:w-96 pt-30 2xl:pt-32 h-auto m-auto z-10 "/>
 		</div>
 	)
 }
